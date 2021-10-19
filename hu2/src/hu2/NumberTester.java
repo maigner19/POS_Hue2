@@ -55,5 +55,19 @@ public class NumberTester {
             numbers[i][1] = Integer.parseInt(splitted[1]);
         }
 
+        for (Integer[] number : numbers) {
+            switch (number[0]) {
+                case 1:
+                    System.out.println(oddTester.testNumber(number[1]));
+                    break;
+                case 2:
+                    System.out.println(oddTester.testNumber(number[1]));
+                    break;
+                case 3:
+                    System.out.println(oddTester.testNumber(number[1]));
+                    break;
+            }
+        }
+
     }
 }
