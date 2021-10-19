@@ -9,34 +9,33 @@ package hu2;
  *
  * @author Michael
  */
-public class VectorCalculator extends AbstractCalculator {
+public class ComplexCalculator extends AbstractCalculator {
 
-    public VectorCalculator(CalculationOperation add, CalculationOperation subtract, CalculationOperation multiply, CalculationOperation divide) {
+    public ComplexCalculator(CalculationOperation add, CalculationOperation subtract, CalculationOperation multiply, CalculationOperation divide) {
         super(add, subtract, multiply, divide);
-
+        double i = Math.sqrt(-1);
         add = (x, y) -> {
             Number res = new Number();
-            res.setA(x.getA() + y.getA());
-            res.setB(x.getB() + y.getB());
+            res.setA((x.getA() + y.getA()) + (x.getA() + y.getA()) * i);
+            res.setB((x.getA() + y.getA()) + (x.getA() + y.getA()) * i);
             return res;
         };
         subtract = (x, y) -> {
             Number res = new Number();
-            res.setA(x.getA() - y.getA());
-            res.setB(x.getB() - y.getB());
+            res.setA((x.getA() - y.getA()) + (x.getA() - y.getA()) * i);
+            res.setB((x.getA() - y.getA()) + (x.getA() - y.getA()) * i);
             return res;
         };
         multiply = (x, y) -> {
             Number res = new Number();
-            res.setA(x.getA() * y.getA());
-            res.setB(x.getB() * y.getB());
-
+            res.setA((x.getA() - y.getA()) + (x.getB() + y.getB()) * i);
+            res.setB((x.getA() - y.getA()) + (x.getB() + y.getB()) * i);
             return res;
         };
         divide = (x, y) -> {
             Number res = new Number();
-            res.setA(x.getA() * y.getA() + x.getB() * y.getB());
-            res.setB(x.getB() / y.getB());
+            res.setA(((x.getA() + x.getB() * i) * (y.getA() - y.getB() * i)) / ((y.getA() + y.getB() * i) * (y.getA() - y.getB() * i)));
+            res.setB(((x.getA() + x.getB() * i) * (y.getA() - y.getB() * i)) / ((y.getA() + y.getB() * i) * (y.getA() - y.getB() * i)));
             return res;
         };
     }
