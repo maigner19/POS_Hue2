@@ -39,7 +39,7 @@ public class NumberTester {
 
     public void testFile() {
         int testfälle = 0;
-        Scanner file;
+        Scanner file = null;
         try {
             file = new Scanner(new File(fileName));
             testfälle = Integer.parseInt(file.nextLine());
@@ -50,7 +50,7 @@ public class NumberTester {
         Integer[][] numbers = new Integer[testfälle][2];
         String[] splitted = new String[2];
         for (int i = 0; i < splitted.length; i++) {
-
+            splitted = file.nextLine().split(" ");
         }
     }
 }
