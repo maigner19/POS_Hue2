@@ -61,10 +61,10 @@ public class NumberTester {
                     System.out.println(oddTester.testNumber(number[1]));
                     break;
                 case 2:
-                    System.out.println(oddTester.testNumber(number[1]));
+                    System.out.println(primeTester.testNumber(number[1]));
                     break;
                 case 3:
-                    System.out.println(oddTester.testNumber(number[1]));
+                    System.out.println(palindromeTester.testNumber(number[1]));
                     break;
             }
         }
