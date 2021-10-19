@@ -13,32 +13,6 @@ public class VectorCalculator extends AbstractCalculator {
 
     public VectorCalculator(CalculationOperation add, CalculationOperation subtract, CalculationOperation multiply, CalculationOperation divide) {
         super(add, subtract, multiply, divide);
-
-        add = (x, y) -> {
-            Number res = new Number();
-            res.setA(x.getA() + y.getA());
-            res.setB(x.getB() + y.getB());
-            return res;
-        };
-        subtract = (x, y) -> {
-            Number res = new Number();
-            res.setA(x.getA() - y.getA());
-            res.setB(x.getB() - y.getB());
-            return res;
-        };
-        multiply = (x, y) -> {
-            Number res = new Number();
-            res.setA(x.getA() * y.getA());
-            res.setB(x.getB() * y.getB());
-
-            return res;
-        };
-        divide = (x, y) -> {
-            Number res = new Number();
-            res.setA(x.getA() * y.getA() + x.getB() * y.getB());
-            res.setB(x.getB() / y.getB());
-            return res;
-        };
     }
 
     @Override

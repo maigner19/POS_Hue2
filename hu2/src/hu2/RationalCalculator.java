@@ -14,30 +14,6 @@ public class RationalCalculator extends AbstractCalculator {
     public RationalCalculator(CalculationOperation add, CalculationOperation subtract, CalculationOperation multiply, CalculationOperation divide) {
         super(add, subtract, multiply, divide);
 
-        add = (x, y) -> {
-            Number res = new Number();
-            res.setA(x.getA() + y.getA());
-            res.setB(x.getA() + y.getA());
-            return res;
-        };
-        subtract = (x, y) -> {
-            Number res = new Number();
-            res.setA(x.getA() - y.getA());
-            res.setB(x.getA() - y.getA());
-            return res;
-        };
-        multiply = (x, y) -> {
-            Number res = new Number();
-            res.setA(x.getA() * y.getA());
-            res.setB(x.getA() * y.getA());
-            return res;
-        };
-        divide = (x, y) -> {
-            Number res = new Number();
-            res.setA(x.getA() / y.getA());
-            res.setB(x.getA() / y.getA());
-            return res;
-        };
     }
 
     @Override
