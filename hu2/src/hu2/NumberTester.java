@@ -6,7 +6,6 @@
 package hu2;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -27,6 +26,7 @@ public class NumberTester {
 
     public void setOddEvenTester(NumberTest oddTester) {
         this.oddTester = oddTester;
+        this.oddTester.testNumber(0);
     }
 
     public void setPrimeTester(NumberTest primeTester) {
