@@ -49,8 +49,11 @@ public class NumberTester {
 
         Integer[][] numbers = new Integer[testfälle][2];
         String[] splitted = new String[2];
-        for (int i = 0; i < splitted.length; i++) {
+        for (int i = 0; i < testfälle; i++) {
             splitted = file.nextLine().split(" ");
+            numbers[i][0] = Integer.parseInt(splitted[0]);
+            numbers[i][1] = Integer.parseInt(splitted[1]);
         }
+
     }
 }
