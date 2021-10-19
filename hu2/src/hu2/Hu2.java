@@ -15,7 +15,8 @@ public class Hu2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
+        NumberTester tester = new NumberTester("numbers.csv");
+        tester.testFile();
     }
 
 }

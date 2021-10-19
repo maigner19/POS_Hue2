@@ -5,14 +5,24 @@
  */
 package hu2;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /**
  *
  * @author Michael
  */
 public class NumberTester {
 
-    public NumberTester(String fileName) {
+    NumberTest oddTester;
+    NumberTest primeTester;
+    NumberTest palindromeTester;
 
+    String fileName;
+
+    public NumberTester(String fileName) {
+        this.fileName = fileName;
     }
 
     public void setOddEvenTester(NumberTest oddTester) {
@@ -28,6 +38,19 @@ public class NumberTester {
     }
 
     public void testFile() {
+        int testfälle = 0;
+        Scanner file;
+        try {
+            file = new Scanner(new File(fileName));
+            testfälle = Integer.parseInt(file.nextLine());
+            System.out.println("Testfälle: " + testfälle);
+        } catch (Exception e) {
+        }
 
+        Integer[][] numbers = new Integer[testfälle][2];
+        String[] splitted = new String[2];
+        for (int i = 0; i < splitted.length; i++) {
+
+        }
     }
 }
