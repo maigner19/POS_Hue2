@@ -22,6 +22,29 @@ public class NumberTester {
 
     public NumberTester(String fileName) {
         this.fileName = fileName;
+
+        setOddEvenTester((number) -> {
+            return number % 2 == 0;
+        });
+
+        setPrimeTester((number) -> {
+            if (number <= 1) {
+                return false;
+            }
+            for (int i = 2; i < number; i++) {
+                if (number % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        });
+
+        setPalindromeTester((number) -> {
+            String variable = String.valueOf(number);
+            StringBuffer reversed = new StringBuffer(variable).reverse();
+
+            return reversed.toString().equals(variable);
+        });
     }
 
     public void setOddEvenTester(NumberTest oddTester) {
@@ -58,13 +81,27 @@ public class NumberTester {
         for (Integer[] number : numbers) {
             switch (number[0]) {
                 case 1:
-                    System.out.println(oddTester.testNumber(number[1]));
+                    if (oddTester.testNumber(number[1])) {
+                        System.out.println("EVEN");
+                    } else {
+                        System.out.println("ODD");
+                    }
                     break;
                 case 2:
-                    System.out.println(primeTester.testNumber(number[1]));
+                    if (primeTester.testNumber(number[1])) {
+                        System.out.println("PRIME");
+                    } else {
+                        System.out.println("NO PRIME");
+                    }
                     break;
                 case 3:
-                    System.out.println(palindromeTester.testNumber(number[1]));
+                    if (palindromeTester.testNumber(number[1])) {
+                        System.out.println("PALINDROME");
+                    } else {
+                        System.out.println("NO PALINDROME");
+                    }
+                    break;
+                default:
                     break;
             }
         }
